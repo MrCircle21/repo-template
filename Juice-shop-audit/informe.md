@@ -27,12 +27,12 @@ Este análisis se realizó en un entorno controlado o laboratorio autorizado y h
 - Evaluación de lógica de negocio
 
 -- -
-####Metodología
+#### Metodología
 Se hizo uso de una metodología de auditoria básica en la pagina web basada en reconocimiento pasivo, análisis de configuración y validación de controles de seguridad estándar.
 
 -- -
 
-###  🧵Herramientas utilizadas:
+### 🧵Herramientas utilizadas:
 - nmap
 - whatweb
 - curl
@@ -157,7 +157,7 @@ Al usar el comando `curl -I` la cabecera este presente y correctamente configura
 
 -- -
 
-####Configuración CORS permisiva
+#### Configuración CORS permisiva
 
 **Clasificación de OWASP**🐝: A05 – Security Misconfiguration | **Severidad**: Alta
 
@@ -179,7 +179,7 @@ Al usar el comando curl -I se encuentren entre las cabeceras `Access-Control-All
 
 -- -
 
-####Robots.txt con rutas sensibles
+#### Robots.txt con rutas sensibles
 
 **Clasificación de OWASP**🐝: A05:2021 – Security Misconfiguration | **Severidad**: Alta
 
