@@ -48,7 +48,7 @@ Se hizo uso de una metodología de auditoria básica en la pagina web basada en 
 |  Certificados SSL/TLS inexistentes |  Alto 🟥 |
 | Cabeceras de seguridad faltantes  |  Alto🟥 |
 |  Robots.txt con rutas sensibles |  Alto🟥 |
-|  Exposición de información pública | Baja 🟩  |
+|  Exposición de información pública | Medio 🟨  |
 | Cookies de inexistentes  |  Informativo 🟦 |
 
 --- -
@@ -107,7 +107,7 @@ En el análisis se pudo notar la falta de cabeceras que evitan el ataque de Clic
 ####  Content-Security-Policy (CSP) ausente.
 
 **Clasificación de OWASP**🐝: A05 – Security Misconfiguration y A03 – Injection
-**Severidad**: Alta
+**Severidad**: Alta 🟥
 
 **Hallazgo:** la política CSP no se encuentra, dejando a la pagina expuesta a múltiples ataques.
 
@@ -132,14 +132,14 @@ Configuración general recomendada:
 
 Recomendado el contrato de un servicio de hardering para la adaptación de un buen CSP.
 
-**Criterio de aceptación**:
+**✅Criterio de aceptación**:
 Implementación y configuración del CSP adaptada a las necesidades de la aplicación, para confirmar que estan usar curl -I.
 
 -- -
 #### HSTS inexistente
 
 **Clasificación de OWASP**🐝: A05 – Security Misconfiguration.
-**Severidad**: Alta 
+**Severidad**: Alta 🟥 
 
 **Hallazgo**: ausencia de la cabecera  Strict-Transport-Security necesaria para el uso obligatorio de https.
 
@@ -152,14 +152,14 @@ Implementación y configuración del CSP adaptada a las necesidades de la aplica
 Añadir la cabecera configurada:
 `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`
 
-**Criterio de aceptación**:
+**✅Criterio de aceptación**:
 Al usar el comando `curl -I` la cabecera este presente y correctamente configurada.
 
 -- -
 
 #### Configuración CORS permisiva
 
-**Clasificación de OWASP**🐝: A05 – Security Misconfiguration | **Severidad**: Alta
+**Clasificación de OWASP**🐝: A05 – Security Misconfiguration | **Severidad**: Alta 🟥
 
 **Hallazgo**: la política CORS esta configurado de forma que permite cualquier sitio realizar solicitudes autenticadas.
 
@@ -181,7 +181,7 @@ Al usar el comando curl -I se encuentren entre las cabeceras `Access-Control-All
 
 #### Robots.txt con rutas sensibles
 
-**Clasificación de OWASP**🐝: A05:2021 – Security Misconfiguration | **Severidad**: Alta
+**Clasificación de OWASP**🐝: A05:2021 – Security Misconfiguration | **Severidad**: Alta 🟥
 
 **Hallazgo**: El archivo robots.txt es accesible públicamente y contiene una ruta en la que se aloja información sensible y secretos de la empresa, comprometiendo la confidencialidad del negocio. .
 
@@ -193,14 +193,14 @@ Al usar el comando curl -I se encuentren entre las cabeceras `Access-Control-All
 
 * Eliminar rutas sensibles de robots.txt y no usarlo para ocultar rutas sensibles.
 
-**Criterio de aceptación**:
+**✅Criterio de aceptación**:
 Rutas genericas alojadas en robots.txt
 
 -- -
 
 ### Exposición de información publica 📸
 
-**Clasificación de OWASP**🐝: A05:2021 – Security Misconfiguration | **Severidad**: Medio.
+**Clasificación de OWASP**🐝: A05:2021 – Security Misconfiguration | **Severidad**: Medio 🟨
 
 **Hallazgo**: servicios como Shodan están exponiendo:
 
@@ -218,7 +218,7 @@ Rutas genericas alojadas en robots.txt
 - Ocultar banners
 - Restringir accesos administrativos
 
-**Criterio de aceptación:**
+**✅Criterio de aceptación:**
 
 Al usar herramientas OSINT como shodan y whois muestren información minima de la infraestructura de la aplicación web.
 
@@ -226,7 +226,7 @@ Al usar herramientas OSINT como shodan y whois muestren información minima de l
 
 #### Coockies de sesion 🍪
 
-Severidad: Informativa
+**Severidad**: Informativa 🟦
 
 **Hallazgo**: Las cookies no se encuentran presentes en la pagina web. En caso de ser añadidas se recomienda hacerlo con una configuración segura como Secure, HttpOnly y  SameSite=Strict.
 
